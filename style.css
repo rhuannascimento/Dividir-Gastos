@@ -12,11 +12,37 @@ footer{
     font-style: italic;
 }
 
+div{
+    text-align: center;
+    padding: 8px;
+}
+
+
+select{
+    width: 250px;
+}
+
+p{
+    margin-bottom: 3px;
+}
+
 section{
     background: white;
     border-radius: 10px;
     padding: 15px;
-    width: 500px;
+    width: 900px;
     margin: auto;
     box-shadow: 5px 5px 10px rgb(139, 163, 163);
+}
+
+div#quadro{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div#nomes{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 130px;
+    margin-left: 130px;
 }
