@@ -43,6 +43,6 @@ div#quadro{
 div#nomes{
     display: flex;
     justify-content: space-between;
-    margin-right: 130px;
+    margin-right: 150px;
     margin-left: 130px;
 }

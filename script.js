@@ -3,9 +3,12 @@ let rhuanRecebe = {lipeDeve:[], gianDeve:[]};
 let lipeRecebe = {gianDeve:[], rhuanDeve:[]};
 
 
+let adicionaritem = document.querySelector('#adicionar')
 let removeritem = document.querySelector('#remover')
 
 removeritem.addEventListener('click', () => {
+
+
 
         let llista = document.querySelector('#lipeRecebe')
         let rlista = document.querySelector('#rhuanRecebe')
@@ -13,34 +16,46 @@ removeritem.addEventListener('click', () => {
 
         if (llista.options[llista.selectedIndex] != null ){
             if(llista.options[llista.selectedIndex].text.includes('Gian')){
-                alert(`O valor de que o gian devia era: ${lipeRecebe.gianDeve[Number(llista.options[llista.selectedIndex].value)]}`)
                 lipeRecebe.gianDeve[Number(llista.options[llista.selectedIndex].value)] = 0
-                alert(`O valor de que o gian deve agora e: ${lipeRecebe.gianDeve[Number(llista.options[llista.selectedIndex].value)]}`)
             }
             if(llista.options[llista.selectedIndex].text.includes('Rhuan')){
-                alert(`O valor de que o rhuan devia era: ${lipeRecebe.rhuanDeve[Number(llista.options[llista.selectedIndex].value)]}`)
                 lipeRecebe.rhuanDeve[Number(llista.options[llista.selectedIndex].value)] = 0
-                alert(`O valor de que o rhuan deve agore e: ${lipeRecebe.rhuanDeve[Number(llista.options[llista.selectedIndex].value)]}`)
             }
 
             llista.removeChild(llista.options[llista.selectedIndex])
             
 
-        }else if (glista.options[glista.selectedIndex] != null ){
+        }if (glista.options[glista.selectedIndex] != null ){
+
+            if(glista.options[glista.selectedIndex].text.includes('Lipe')){
+                gianRecebe.lipeDeve[Number(glista.options[glista.selectedIndex].value)] = 0
+            }
+            if(glista.options[glista.selectedIndex].text.includes('Rhuan')){
+                gianRecebe.rhuanDeve[Number(glista.options[glista.selectedIndex].value)] = 0
+            }
+
             glista.removeChild(glista.options[glista.selectedIndex])
             
         }
+        if(rlista.options[rlista.selectedIndex] != null ){
+            if(rlista.options[rlista.selectedIndex].text.includes('Lipe')){
+                rhuanRecebe.lipeDeve[Number(rlista.options[rlista.selectedIndex].value)] = 0
+            }
+            if(rlista.options[rlista.selectedIndex].text.includes('Gian')){
+                rhuanRecebe.gianDeve[Number(rlista.options[rlista.selectedIndex].value)] = 0
+            }
 
+            rlista.removeChild(rlista.options[rlista.selectedIndex])
+        }
 
-        //let x = document.querySelectorAll('.selecao')
-        //let selecionado = x.options[x.selectedIndex]
-        //x.removeChild(selecionado)
+        calculartotal()
 })
 
 
 
-function adicionar(){
+adicionaritem.addEventListener('click', () => {
     let valor = document.querySelector('#valor').value
+    let ivalor = document.querySelector('#valor')
     let ldividir = document.querySelector('input#liped')
     let gdividir = document.querySelector('input#giand')
     let rdividir = document.querySelector('input#rhuand')
@@ -51,7 +66,8 @@ function adicionar(){
 
     if(pagar[0].checked){
         if(ldividir.checked && gdividir.checked && rdividir.checked){
-            let divisao = Number(valor)/3
+            let divisao = (Number(valor)/3).toFixed(2)
+
             lipeRecebe.gianDeve.push(divisao)
             lipeRecebe.rhuanDeve.push(divisao)
 
@@ -65,7 +81,8 @@ function adicionar(){
             llista.appendChild(item2)
 
         }else if(ldividir.checked && gdividir.checked){
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             lipeRecebe.gianDeve.push(divisao)
 
             let item = document.createElement('option')
@@ -74,7 +91,8 @@ function adicionar(){
             llista.appendChild(item)
 
         }else if(ldividir.checked && rdividir.checked){
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             lipeRecebe.rhuanDeve.push(divisao)
 
             let item = document.createElement('option')
@@ -83,7 +101,8 @@ function adicionar(){
             llista.appendChild(item)
 
         }else{
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             lipeRecebe.rhuanDeve.push(divisao)
             lipeRecebe.gianDeve.push(divisao)
 
@@ -97,9 +116,11 @@ function adicionar(){
             llista.appendChild(item2)
             
         }
+
     }else if(pagar[1].checked){
         if(gdividir.checked && ldividir.checked && rdividir.checked){
-            let divisao = Number(valor)/3
+            let divisao = (Number(valor)/3).toFixed(2)
+
             gianRecebe.lipeDeve.push(divisao)
             gianRecebe.rhuanDeve.push(divisao)
 
@@ -113,7 +134,8 @@ function adicionar(){
             glista.appendChild(item2)
 
         }else if(gdividir.checked && ldividir.checked){
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             gianRecebe.lipeDeve.push(divisao)
 
             let item = document.createElement('option')
@@ -122,7 +144,8 @@ function adicionar(){
             glista.appendChild(item)
 
         }else if(gdividir.checked && rdividir.checked){
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             gianRecebe.rhuanDeve.push(divisao)
 
             let item = document.createElement('option')
@@ -131,7 +154,8 @@ function adicionar(){
             glista.appendChild(item)
 
         }else{
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             gianRecebe.rhuanDeve.push(divisao)
             gianRecebe.lipeDeve.push(divisao)
 
@@ -145,9 +169,11 @@ function adicionar(){
             glista.appendChild(item2)
     
         }
+
     }else{
         if(rdividir.checked && ldividir.checked && gdividir.checked){
-            let divisao = Number(valor)/3
+            let divisao = (Number(valor)/3).toFixed(2)
+
             rhuanRecebe.lipeDeve.push(divisao)
             rhuanRecebe.gianDeve.push(divisao)
 
@@ -161,7 +187,8 @@ function adicionar(){
             rlista.appendChild(item2)
 
         }else if(rdividir.checked && ldividir.checked){
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             rhuanRecebe.lipeDeve.push(divisao)
 
             let item = document.createElement('option')
@@ -171,7 +198,8 @@ function adicionar(){
 
 
         }else if(rdividir.checked && gdividir.checked){
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             rhuanRecebe.gianDeve.push(divisao)
 
             let item = document.createElement('option')
@@ -180,7 +208,8 @@ function adicionar(){
             rlista.appendChild(item)
 
         }else{
-            let divisao = Number(valor)/2
+            let divisao = (Number(valor)/2).toFixed(2)
+
             rhuanRecebe.gianDeve.push(divisao)
             rhuanRecebe.lipeDeve.push(divisao)
 
@@ -196,21 +225,48 @@ function adicionar(){
         }
     }
 
-    /*let somar1 = 0
-    let somar2 = 0
+    ivalor.value = ''
+    ivalor.focus()
 
-    for(let pos in rhuanRecebe.lipeDeve){
-        somar1+=rhuanRecebe.lipeDeve[pos]
+    calculartotal()
+
+})
+
+function calculartotal(){
+    let lipegian = somar(lipeRecebe.gianDeve) - somar(gianRecebe.lipeDeve)
+    let liperhuan = somar(lipeRecebe.rhuanDeve) - somar(rhuanRecebe.lipeDeve)
+    let gianrhuan = somar(gianRecebe.rhuanDeve) - somar(rhuanRecebe.gianDeve)
+    let res = document.querySelector('#resultado')
+    let res2 = document.querySelector('#resultado2')
+    let res3 = document.querySelector('#resultado3')
+    
+
+    if(lipegian < 0){
+        res.innerHTML = `<br> Lipe => Gian (R$${lipegian*-1})`
+    }else if(lipegian >=0 ){
+        res.innerHTML = `<br>Gian => Lipe (R$${lipegian})`
+    }
+    if(liperhuan < 0){
+        res2.innerHTML = `Lipe => Rhuan (R$${liperhuan*-1})`
+    }else if(liperhuan >=0 ){
+        res2.innerHTML = `Rhuan => Lipe (R$${liperhuan})`
     }
 
-    for(let pos in rhuanRecebe.gianDeve){
-        somar2+=rhuanRecebe.gianDeve[pos]
+    if(gianrhuan < 0){
+        res3.innerHTML = `Gian => Rhuan (R$${gianrhuan*-1})`
+    }else if(gianrhuan >=0 ){
+        res3.innerHTML = `Rhuan => Gian (R$${gianrhuan})`
     }
 
-    let total = Number(somar1) + Number(somar2)
-    window.alert(`O rhuan recebe ${total} e o lipe paga ${somar1} e o gian paga ${somar2}`)
-    */
 }
 
 
-    
+function somar(array){
+    let soma = 0
+
+    for(let i in array ) {
+        soma += array[i]
+    }
+
+    return soma
+}
