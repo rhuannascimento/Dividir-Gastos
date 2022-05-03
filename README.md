@@ -8,7 +8,7 @@ Dividir:
 Escolha com quem a pessoa que pagou vai dividir a conta.
 
 Adiconar:
-Adiciona o valor da conta ja dividino no painel.
+Adiciona o valor da conta ja dividida no painel.
 
 Paineis:
 Cada painel contem um nome em cima que representa a pessoa que vai receber os valores contidos no mesmo.
