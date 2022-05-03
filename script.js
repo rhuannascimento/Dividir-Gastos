@@ -6,6 +6,7 @@ let lipeRecebe = {gianDeve:[], rhuanDeve:[]};
 let adicionaritem = document.querySelector('#adicionar')
 let removeritem = document.querySelector('#remover')
 let calculartotal = document.querySelector('#calcular')
+let limpar = document.querySelector('#limpar')
 
 removeritem.addEventListener('click', () => {
 
@@ -259,6 +260,10 @@ calculartotal.addEventListener('click', () =>{
         res3.innerHTML = `Rhuan => Gian (R$${gianrhuan})`
     }
 
+})
+
+limpar.addEventListener('click', () =>{
+    location.reload()
 })
 
 
