@@ -232,33 +232,36 @@ adicionaritem.addEventListener('click', () => {
 })
 
 calculartotal.addEventListener('click', () =>{
-    let lipegian = somar(lipeRecebe.gianDeve) - somar(gianRecebe.lipeDeve)
-    let liperhuan = somar(lipeRecebe.rhuanDeve) - somar(rhuanRecebe.lipeDeve)
-    let gianrhuan = somar(gianRecebe.rhuanDeve) - somar(rhuanRecebe.gianDeve)
+    let lipegian = somar(lipeRecebe.gianDeve) 
+    let liperhuan = somar(lipeRecebe.rhuanDeve) 
+    let gianrhuan = somar(gianRecebe.rhuanDeve)
+    let gianlipe = somar(gianRecebe.lipeDeve)
+    let rhuanlipe = somar(rhuanRecebe.lipeDeve)
+    let rhuangian = somar(rhuanRecebe.gianDeve)
     let res = document.querySelector('#resultado')
     let res2 = document.querySelector('#resultado2')
     let res3 = document.querySelector('#resultado3')
     
 
-    if(lipegian < 0){
-        res.innerHTML = `<br> Lipe => Gian (R$${lipegian*-1})`
+    if(liperhuan>rhuanlipe){
+        res.innerHTML = `Rhuan => Lipe ${liperhuan-rhuanlipe}`
     }
-    if(lipegian >=0 ){
-        res.innerHTML = `<br>Gian => Lipe (R$${lipegian})`
+    if(rhuanlipe>liperhuan){
+        res.innerHTML = `Lipe => Rhuan ${rhuanlipe-liperhuan}`
     }
-    if(liperhuan < 0){
-        res2.innerHTML = `Lipe => Rhuan (R$${liperhuan*-1})`
+    if(lipegian>gianlipe){
+        res2.innerHTML = `Gian => Lipe ${lipegian-gianlipe}`
     }
-    if(liperhuan >=0 ){
-        res2.innerHTML = `Rhuan => Lipe (R$${liperhuan})`
+    if(gianlipe>lipegian){
+        res2.innerHTML = `Lipe => Gian ${gianlipe-lipegian}`
     }
-
-    if(gianrhuan < 0){
-        res3.innerHTML = `Gian => Rhuan (R$${gianrhuan*-1})`
+    if(gianrhuan>rhuangian){
+        res3.innerHTML = `Rhuan => Gian ${gianrhuan-rhuangian}`
     }
-    if(gianrhuan >=0 ){
-        res3.innerHTML = `Rhuan => Gian (R$${gianrhuan})`
+    if(rhuangian>gianrhuan){
+        res3.innerHTML = `Gian => Rhuan ${rhuangian-gianrhuan}`
     }
+    
 
 })
 
@@ -271,7 +274,7 @@ function somar(array){
     let soma = 0
     let i = 0
     for(i in array ) {
-        soma += array[i]
+        soma += Number(array[i])
     }
 
     return soma
