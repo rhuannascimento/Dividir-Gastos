@@ -5,6 +5,7 @@ let lipeRecebe = {gianDeve:[], rhuanDeve:[]};
 
 let adicionaritem = document.querySelector('#adicionar')
 let removeritem = document.querySelector('#remover')
+let calculartotal = document.querySelector('#calcular')
 
 removeritem.addEventListener('click', () => {
 
@@ -48,7 +49,6 @@ removeritem.addEventListener('click', () => {
             rlista.removeChild(rlista.options[rlista.selectedIndex])
         }
 
-        calculartotal()
 })
 
 
@@ -228,11 +228,9 @@ adicionaritem.addEventListener('click', () => {
     ivalor.value = ''
     ivalor.focus()
 
-    calculartotal()
-
 })
 
-function calculartotal(){
+calculartotal.addEventListener('click', () =>{
     let lipegian = somar(lipeRecebe.gianDeve) - somar(gianRecebe.lipeDeve)
     let liperhuan = somar(lipeRecebe.rhuanDeve) - somar(rhuanRecebe.lipeDeve)
     let gianrhuan = somar(gianRecebe.rhuanDeve) - somar(rhuanRecebe.gianDeve)
@@ -243,28 +241,31 @@ function calculartotal(){
 
     if(lipegian < 0){
         res.innerHTML = `<br> Lipe => Gian (R$${lipegian*-1})`
-    }else if(lipegian >=0 ){
+    }
+    if(lipegian >=0 ){
         res.innerHTML = `<br>Gian => Lipe (R$${lipegian})`
     }
     if(liperhuan < 0){
         res2.innerHTML = `Lipe => Rhuan (R$${liperhuan*-1})`
-    }else if(liperhuan >=0 ){
+    }
+    if(liperhuan >=0 ){
         res2.innerHTML = `Rhuan => Lipe (R$${liperhuan})`
     }
 
     if(gianrhuan < 0){
         res3.innerHTML = `Gian => Rhuan (R$${gianrhuan*-1})`
-    }else if(gianrhuan >=0 ){
+    }
+    if(gianrhuan >=0 ){
         res3.innerHTML = `Rhuan => Gian (R$${gianrhuan})`
     }
 
-}
+})
 
 
 function somar(array){
     let soma = 0
-
-    for(let i in array ) {
+    let i = 0
+    for(i in array ) {
         soma += array[i]
     }
 
