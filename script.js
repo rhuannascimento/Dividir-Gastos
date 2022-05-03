@@ -5,7 +5,6 @@ let lipeRecebe = {gianDeve:[], rhuanDeve:[]};
 
 let adicionaritem = document.querySelector('#adicionar')
 let removeritem = document.querySelector('#remover')
-let calculartotal = document.querySelector('#calcular')
 let limpar = document.querySelector('#limpar')
 
 removeritem.addEventListener('click', () => {
@@ -49,6 +48,7 @@ removeritem.addEventListener('click', () => {
 
             rlista.removeChild(rlista.options[rlista.selectedIndex])
         }
+        calcular()
 
 })
 
@@ -228,10 +228,11 @@ adicionaritem.addEventListener('click', () => {
 
     ivalor.value = ''
     ivalor.focus()
+    calcular()
 
 })
 
-calculartotal.addEventListener('click', () =>{
+function calcular(){
     let lipegian = somar(lipeRecebe.gianDeve) 
     let liperhuan = somar(lipeRecebe.rhuanDeve) 
     let gianrhuan = somar(gianRecebe.rhuanDeve)
@@ -263,7 +264,7 @@ calculartotal.addEventListener('click', () =>{
     }
     
 
-})
+}
 
 limpar.addEventListener('click', () =>{
     location.reload()
