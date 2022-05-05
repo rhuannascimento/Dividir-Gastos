@@ -244,19 +244,19 @@ function calcular(){
     let res3 = document.querySelector('#resultado3')
     
 
-    if(liperhuan>rhuanlipe){
+    if(liperhuan>=rhuanlipe){
         res.innerHTML = `Rhuan => Lipe ${liperhuan-rhuanlipe}`
     }
     if(rhuanlipe>liperhuan){
         res.innerHTML = `Lipe => Rhuan ${rhuanlipe-liperhuan}`
     }
-    if(lipegian>gianlipe){
+    if(lipegian>=gianlipe){
         res2.innerHTML = `Gian => Lipe ${lipegian-gianlipe}`
     }
     if(gianlipe>lipegian){
         res2.innerHTML = `Lipe => Gian ${gianlipe-lipegian}`
     }
-    if(gianrhuan>rhuangian){
+    if(gianrhuan>=rhuangian){
         res3.innerHTML = `Rhuan => Gian ${gianrhuan-rhuangian}`
     }
     if(rhuangian>gianrhuan){
