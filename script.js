@@ -103,7 +103,7 @@ adicionaritem.addEventListener('click', () => {
                 item.text = `Recebe ${divisao} de Rhuan.`
                 llista.appendChild(item)
 
-            }else if(rdividir.checked){
+            }else if(rdividir.checked  && !ldividir.checked && !gdividir.checked){
 
                 let divisao = Number(valor).toFixed(2)
 
@@ -114,7 +114,7 @@ adicionaritem.addEventListener('click', () => {
                 item.text = `Recebe ${divisao} de Rhuan.`
                 llista.appendChild(item)
 
-            }else if(gdividir.checked){
+            }else if(gdividir.checked  && !rdividir.checked && !ldividir.checked){
 
                 let divisao = Number(valor).toFixed(2)
 
@@ -178,7 +178,7 @@ adicionaritem.addEventListener('click', () => {
                 item.text = `Recebe ${divisao} de Rhuan.`
                 glista.appendChild(item)
 
-            }else if(rdividir.checked){
+            }else if(rdividir.checked && !ldividir.checked && !gdividir.checked){
                 let divisao = Number(valor).toFixed(2)
 
                 gianRecebe.rhuanDeve.push(divisao)
@@ -187,7 +187,7 @@ adicionaritem.addEventListener('click', () => {
                 item.value = gianRecebe.rhuanDeve.length-1
                 item.text = `Recebe ${divisao} de Rhuan.`
                 glista.appendChild(item)
-            }else if(ldividir.checked){
+            }else if(ldividir.checked && !rdividir.checked && !gdividir.checked){
                 let divisao = Number(valor).toFixed(2)
 
                 gianRecebe.lipeDeve.push(divisao)
@@ -250,7 +250,7 @@ adicionaritem.addEventListener('click', () => {
                 item.text = `Recebe ${divisao} de Gian.`
                 rlista.appendChild(item)
 
-            }else if(ldividir.checked){
+            }else if(ldividir.checked  && !rdividir.checked && !gdividir.checked){
                 let divisao = Number(valor).toFixed(2)
 
                 rhuanRecebe.lipeDeve.push(divisao)
@@ -259,7 +259,7 @@ adicionaritem.addEventListener('click', () => {
                 item.value = rhuanRecebe.lipeDeve.length-1
                 item.text = `Recebe ${divisao} de Lipe.`
                 rlista.appendChild(item)
-            }else if(gdividir.checked){
+            }else if(gdividir.checked  && !rdividir.checked && !ldividir.checked){
                 let divisao = Number(valor).toFixed(2)
 
                 rhuanRecebe.gianDeve.push(divisao)
