@@ -1,75 +1,98 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ap302</title>
-
-    <link rel = "shortcut icon" type = "imagem/x-icon" href = "./icone.ico"/>
-
-    <link href="./style.css" rel="stylesheet">
-   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel = "shortcut icon" type = "imagem/x-icon" href = "./imagens/icone.ico"/>
 </head>
 <body>
-    <head>
-        <h1 id="branco">FINANÇAS</h1>
-    </head>
-
+    <header class="title">
+        <p>DIVIDIR GASTOS</p>
+    </header>
     <section>
-        <div>Valor:
-            <input type="number" id="valor">
-        </div>
-        <div>Quem pagou:
-            <input type="radio" name="pagou" id="lipep" checked>
-            <label for="lipe">Lipe</label>
-            <input type="radio" name="pagou" id="gianp">
-            <label for="gian">Gian</label>
-            <input type="radio" name="pagou" id="rhuanp">
-            <label for="rhuan">Rhuan</label>
-        </div>
-        <div>Dividir com:
-            <input type="checkbox" id="liped" checked>
-            <label for="liped">Lipe</label>
-            <input type="checkbox" id="giand" checked>
-            <label for="giand">Gian</label>
-            <input type="checkbox" id="rhuand" checked>
-            <label for="rhuand">Rhuan</label>
-        </div>
-        <div>
-            <input type="button" value="Adicionar!" id="adicionar">
-        </div>
-        <div id="nomes">
-            <p>Rhuan</p>
-            <p>Lipe</p>
-            <p>Gian</p>
-        </div>
-        <div id="quadro">
-            <select id="rhuanRecebe" size="8" ></select>
-            <select id="lipeRecebe" size="8" ></select>
-            <select id="gianRecebe" size="8" ></select>
-        </div>
-        <div>
-            <input type="button" value="Remover!" id="remover">
-        </div>
-        <div>
-            <input type="button" value="Limpar tudo!" id="limpar">
+      <div class="controller">
+
+        <div class="rowclass">
+          <div class="columnclass">
+            <div class="rowclass">
+              <input type="number" class="form-control" id="valor" placeholder="Valor!">
+              <input type="image" src="./imagens/plus.png" id="adicionar"/> 
+            </div>
+            <div class="rowclass">
+              <div>Quem Pagou?
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="lipep" name="pagou">
+                  <label class="form-check-label" for="flexRadioDefault">Lipe</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="gianp" name="pagou">
+                  <label class="form-check-label" for="flexRadioChecked">Gian</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="rhuanp" name="pagou">
+                  <label class="form-check-label" for="flexRadioChecked">Rhuan</label>
+                </div> 
+              </div>
+
+              <div>Dividir com quem?
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="liped">
+                  <label class="form-check-label" for="flexCheckDisabled">Lipe</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="giand">
+                  <label class="form-check-label" for="flexCheckCheckedDisabled"> Gian</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rhuand">
+                  <label class="form-check-label" for="flexCheckCheckedDisabled">Rhuan</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="result">
+            <p class="total">Total:</p>
+            <p class="total" id="resultado"></p>
+            <p class="total" id="resultado2"></p>
+            <p class="total" id="resultado3"></p>
+          </div>
         </div>
 
-        <div id="resultado">
-        </div>
-        <div id="resultado2">
-        </div>
-        <div id="resultado3">
+        <div class="rowclass2">
+          <p>Lipe</p>
+          <p>Gian</p>
+          <p>Rhuan</p>
         </div>
 
+        <div class="rowclass">
+          <select class="form-select" size="8" id="lipeRecebe" aria-label="size 3 select example">
+          </select>
+          <select class="form-select" size="8" id="gianRecebe" aria-label="size 3 select example">
+          </select>
+          <select class="form-select" size="8" id="rhuanRecebe" aria-label="size 3 select example">
+          </select>
+        </div>
+
+        <div class="rowclass agroup">
+          <input type="image" src="./imagens/reloading.png" id="limpar">
+          <input type="image" src="./imagens/remove.png" id="remover"/>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <p id="branco">&copy;NascSoftware</p>
+      <p class="nasc">&copy;NascSoftware</p>
     </footer>
 
     <script src="script.js"></script>
+
+
 </body>
 </html>
+
+
+

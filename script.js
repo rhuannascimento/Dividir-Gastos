@@ -9,47 +9,47 @@ let limpar = document.querySelector('#limpar')
 
 removeritem.addEventListener('click', () => {
 
-        let valor = document.querySelector('#valor').value
         let llista = document.querySelector('#lipeRecebe')
         let rlista = document.querySelector('#rhuanRecebe')
         let glista = document.querySelector('#gianRecebe')
 
-        if(valor!=''){
-            if (llista.options[llista.selectedIndex] != null ){
-                if(llista.options[llista.selectedIndex].text.includes('Gian')){
-                    lipeRecebe.gianDeve[Number(llista.options[llista.selectedIndex].value)] = 0
-                }
-                if(llista.options[llista.selectedIndex].text.includes('Rhuan')){
-                    lipeRecebe.rhuanDeve[Number(llista.options[llista.selectedIndex].value)] = 0
-                }
+       
+        if (llista.options[llista.selectedIndex] != null ){
+            if(llista.options[llista.selectedIndex].text.includes('Gian')){
+                   lipeRecebe.gianDeve[Number(llista.options[llista.selectedIndex].value)] = 0
+            }
+            if(llista.options[llista.selectedIndex].text.includes('Rhuan')){
+                lipeRecebe.rhuanDeve[Number(llista.options[llista.selectedIndex].value)] = 0
+            }
 
-                llista.removeChild(llista.options[llista.selectedIndex])
+            llista.removeChild(llista.options[llista.selectedIndex])
                 
 
-            }if (glista.options[glista.selectedIndex] != null ){
-
-                if(glista.options[glista.selectedIndex].text.includes('Lipe')){
-                    gianRecebe.lipeDeve[Number(glista.options[glista.selectedIndex].value)] = 0
-                }
-                if(glista.options[glista.selectedIndex].text.includes('Rhuan')){
-                    gianRecebe.rhuanDeve[Number(glista.options[glista.selectedIndex].value)] = 0
-                }
-
-                glista.removeChild(glista.options[glista.selectedIndex])
-                
-            }
-            if(rlista.options[rlista.selectedIndex] != null ){
-                if(rlista.options[rlista.selectedIndex].text.includes('Lipe')){
-                    rhuanRecebe.lipeDeve[Number(rlista.options[rlista.selectedIndex].value)] = 0
-                }
-                if(rlista.options[rlista.selectedIndex].text.includes('Gian')){
-                    rhuanRecebe.gianDeve[Number(rlista.options[rlista.selectedIndex].value)] = 0
-                }
-
-                rlista.removeChild(rlista.options[rlista.selectedIndex])
-            }
-            calcular()
         }
+        if (glista.options[glista.selectedIndex] != null ){
+
+            if(glista.options[glista.selectedIndex].text.includes('Lipe')){
+                gianRecebe.lipeDeve[Number(glista.options[glista.selectedIndex].value)] = 0
+            }
+            if(glista.options[glista.selectedIndex].text.includes('Rhuan')){
+                gianRecebe.rhuanDeve[Number(glista.options[glista.selectedIndex].value)] = 0
+            }
+
+            glista.removeChild(glista.options[glista.selectedIndex])
+                
+        }
+        if(rlista.options[rlista.selectedIndex] != null ){
+            if(rlista.options[rlista.selectedIndex].text.includes('Lipe')){
+                rhuanRecebe.lipeDeve[Number(rlista.options[rlista.selectedIndex].value)] = 0
+            }
+            if(rlista.options[rlista.selectedIndex].text.includes('Gian')){
+                rhuanRecebe.gianDeve[Number(rlista.options[rlista.selectedIndex].value)] = 0
+            }
+
+            rlista.removeChild(rlista.options[rlista.selectedIndex])
+        }
+        
+        calcular()
 
 })
 

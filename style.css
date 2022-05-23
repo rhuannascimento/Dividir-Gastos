@@ -1,48 +1,91 @@
+.title{
+    font-family: Insanibc;
+    height: 2.5;
+    text-align: center;
+    font-size: 5em;
+    color: white;
+}
+
+.nasc{
+    font-family: Insanibc;
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 2em;
+    color: white;
+}
+
 body{
-    background-color: rgb(107, 169, 250);
-    font: normal 15pt arial;
+    background-color: rgb(78, 78, 78);
 }
 
-#branco{
-    color: azure;
-    text-align: center;
+@font-face {
+    font-family: cool;
+    src: url("./fontes/coolvetica\ condensed\ rg.otf");
 }
 
-footer{
-    font-style: italic;
-}
-
-div{
-    text-align: center;
-    padding: 8px;
-}
-
-
-select{
-    width: 250px;
-}
-
-p{
-    margin-bottom: 3px;
+@font-face {
+    font-family: Insanibc;
+    src: url("./fontes/DIMIS___.TTF");
 }
 
 section{
     background: white;
-    border-radius: 10px;
-    padding: 15px;
-    width: 900px;
+    border-radius: 1em;
+    padding: 0.5em;
+    width: 45em;
     margin: auto;
-    box-shadow: 5px 5px 10px rgb(139, 163, 163);
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    font-family: cool;
+    font-size: 1.3em;
 }
 
-div#quadro{
+.columnclass{
     display: flex;
+    flex-direction: column;
+    width: 18em;
+}
+
+div{
+    margin-bottom: 0.5em;
+}
+
+.rowclass{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-evenly;
 }
 
-div#nomes{
+.rowclass2{
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    margin-right: 150px;
-    margin-left: 130px;
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+.form-select{
+    width: 12em;
+}
+
+input[type=image]{
+    width: 1.8em;
+    height: 1.8em;
+    margin-left: 0.5em;
+}
+
+
+.result{
+    background-color: rgb(78, 78, 78);
+    width: 18em;
+    height: 12em;
+    border-radius: 1em;
+    text-align: center;
+    color: white;
+}
+
+.agroup{
+    margin-right: 18em;
+    margin-left: 18em;
 }

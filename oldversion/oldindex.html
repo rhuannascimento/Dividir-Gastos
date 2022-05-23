@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ap302</title>
+
+    <link rel = "shortcut icon" type = "imagem/x-icon" href = "./icone.ico"/>
+
+    <link href="./style.css" rel="stylesheet">
+   
+
+</head>
+<body>
+    <head>
+        <h1 id="branco">FINANÇAS</h1>
+    </head>
+
+    <section>
+        <div>Valor:
+            <input type="number" id="valor">
+        </div>
+        <div>Quem pagou:
+            <input type="radio" name="pagou" id="lipep" checked>
+            <label for="lipe">Lipe</label>
+            <input type="radio" name="pagou" id="gianp">
+            <label for="gian">Gian</label>
+            <input type="radio" name="pagou" id="rhuanp">
+            <label for="rhuan">Rhuan</label>
+        </div>
+        <div>Dividir com:
+            <input type="checkbox" id="liped" checked>
+            <label for="liped">Lipe</label>
+            <input type="checkbox" id="giand" checked>
+            <label for="giand">Gian</label>
+            <input type="checkbox" id="rhuand" checked>
+            <label for="rhuand">Rhuan</label>
+        </div>
+        <div>
+            <input type="button" value="Adicionar!" id="adicionar">
+        </div>
+        <div id="nomes">
+            <p>Rhuan</p>
+            <p>Lipe</p>
+            <p>Gian</p>
+        </div>
+        <div id="quadro">
+            <select id="rhuanRecebe" size="8" ></select>
+            <select id="lipeRecebe" size="8" ></select>
+            <select id="gianRecebe" size="8" ></select>
+        </div>
+        <div>
+            <input type="button" value="Remover!" id="remover">
+        </div>
+        <div>
+            <input type="button" value="Limpar tudo!" id="limpar">
+        </div>
+
+        <div id="resultado">
+        </div>
+        <div id="resultado2">
+        </div>
+        <div id="resultado3">
+        </div>
+
+    </section>
+
+    <footer class="nasc">
+        <p>&copy;NascSoftware</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
